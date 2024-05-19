@@ -137,6 +137,7 @@
             <h2>VIP PASLAUGA</h2>
             <p>Tapkite VIP nariu ir mėgaukitės išskirtiniais privalumais.</p>
             <p class="price">$2.99</p>
+            <!-- PayPal mygtukas -->
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                 <input type="hidden" name="cmd" value="_xclick">
                 <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL@example.com">
@@ -144,7 +145,8 @@
                 <input type="hidden" name="item_name" value="VIP PASLAUGA">
                 <input type="hidden" name="amount" value="2.99">
                 <button type="submit" class="paypal-button">Buy Now</button>
-                <button onclick="openModal('VIP')">Buy Now</button>
+            </form>
+            <button onclick="openModal('VIP')">Buy Now</button>
         </div>
         <div class="product">
             <h2>HERO PASLAUGA</h2>
