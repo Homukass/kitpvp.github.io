@@ -140,7 +140,7 @@
             <!-- PayPal mygtukas -->
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                 <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="packb228@gmail.com">
+                <input type="hidden" name="business" value="dvaicys.vaicys@gmail.com">
                 <input type="hidden" name="currency_code" value="USD">
                 <input type="hidden" name="item_name" value="VIP PASLAUGA">
                 <input type="hidden" name="amount" value="2.99">
@@ -203,64 +203,4 @@
         function submitPurchase(event) {
             event.preventDefault();
             var username = document.getElementById("username").value;
-            var email = document.getElementById("email").value;
-            var paymentMethod = document.getElementById("payment").value;
-            var selectedService = document.getElementById("selectedService").innerText;
-
-            var message = "New purchase:\n" +
-                "Username: " + username + "\n" +
-                "Email: " + email + "\n" +
-                "Payment Method: " + paymentMethod + "\n" +
-                "Service: " + selectedService;
-
-            sendToDiscord(message);
-            alert('Thank you for your purchase!');
-            closeModal();
-        }
-
-        function sendToDiscord(message) {
-            var webhookUrl = "https://discord.com/api/webhooks/1239577363608637523/-rpYxRA4d1y6EF9pb10PmayEtVDGmkzGtw41YN_NRVoK8FyPIVcQL-OacYMzg_kCpID_";
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", webhookUrl);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            var payload = { content: message };
-            xhr.send(JSON.stringify(payload));
-        }
-
-        function openModal(service) {
-            document.getElementById("selectedService").innerText = "Perki paslauga: " + service;
-            document.getElementById("paymentModal").style.display = "block";
-        }
-
-        function closeModal() {
-            document.getElementById("paymentModal").style.display = "none";
-            document.getElementById("loginModal").style.display = "none";
-        }
-
-        window.onclick = function (event) {
-            if (event.target == document.getElementById("paymentModal") || event.target == document.getElementById("loginModal")) {
-                closeModal();
-            }
-        }
-
-        function openLoginModal() {
-            document.getElementById("loginModal").style.display = "block";
-        }
-
-        function login(event) {
-            event.preventDefault();
-            var username = document.getElementById("loginUsername").value;
-            document.getElementById("usernameDisplay").innerText = "Prisijunges: " + username;
-            document.getElementById("loginButton").style.display = "none";
-            closeModal();
-        }
-
-        var closeButtons = document.getElementsByClassName("close");
-        for (var i = 0; i < closeButtons.length; i++) {
-            closeButtons[i].onclick = function () {
-                closeModal();
-            }
-        }
-    </script>
-</body>
-</html>
+            var email
