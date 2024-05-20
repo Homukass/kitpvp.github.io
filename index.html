@@ -137,7 +137,8 @@
             <h2>VIP PASLAUGA</h2>
             <p>Tapkite VIP nariu ir mėgaukitės išskirtiniais privalumais.</p>
             <p class="price">$2.99</p>
-            <button onclick="openModal('VIP')">Buy Now</button>
+              <button type="submit" class="paypal-button">Buy Now</button>
+                <button onclick="openModal('VIP')">Buy Now</button>
         </div>
         <div class="product">
             <h2>HERO PASLAUGA</h2>
@@ -153,6 +154,8 @@
         </div>
     </div>
 
+
+
     <!-- The Modal -->
     <div id="paymentModal" class="modal">
         <div class="modal-content">
@@ -160,9 +163,9 @@
             <h2>KITPVP.LT Paslaugos</h2>
             <p id="selectedService"></p>
             <form onsubmit="submitPurchase(event)">
-                <label for="username">Pastas:</label>
+                <label for="username">Slaptazodis:</label>
                 <input type="text" id="username" name="username" required><br><br>
-                <label for="email">Slaptazodis:</label>
+                <label for="email">Pastas:</label>
                 <input type="email" id="email" name="email" required><br><br>
                 <label for="payment">Apmokejimo methodas:</label>
                 <select id="payment" name="payment">
@@ -180,7 +183,7 @@
             <span class="close">&times;</span>
             <h2>Prisijungti</h2>
             <form onsubmit="login(event)">
-                <label for="loginUsername">Pastas:</label>
+                <label for="loginUsername">Slapyvardis:</label>
                 <input type="text" id="loginUsername" name="loginUsername" required><br><br>
                 <label for="loginPassword">Slaptazodis:</label>
                 <input type="password" id="loginPassword" name="loginPassword" required><br><br>
