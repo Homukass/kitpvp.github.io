@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft Services</title>
+    <title>Markeriai Parduotuvė</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,248 +11,97 @@
             padding: 0;
             background-color: #f4f4f4;
         }
-
-        header {
-            background: #333;
+        .header {
+            background-color: #333;
             color: #fff;
             padding: 10px 0;
             text-align: center;
-            position: relative;
         }
-
-            header .login {
-                position: absolute;
-                top: 10px;
-                right: 20px;
-            }
-
-                header .login button {
-                    background: #5cb85c;
-                    color: #fff;
-                    padding: 10px;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;
-                }
-
-                    header .login button:hover {
-                        background: #4cae4c;
-                    }
-
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px 0;
         }
-
-        .product {
-            background: #fff;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-            .product h2 {
-                margin-top: 0;
-            }
-
-            .product p {
-                line-height: 1.6;
-            }
-
-            .product .price {
-                color: #b12704;
-                font-weight: bold;
-            }
-
-            .product button {
-                background: #5cb85c;
-                color: #fff;
-                padding: 10px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-
-                .product button:hover {
-                    background: #4cae4c;
-                }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
-            padding-top: 60px;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-            .close:hover,
-            .close:focus {
-                color: black;
-                text-decoration: none;
-                cursor: pointer;
-            }
-
-        .username {
-            position: absolute;
-            top: 10px;
-            right: 20px;
+        .nav a {
             color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .nav a:hover {
+            background-color: #555;
+        }
+        .container {
+            padding: 20px;
+        }
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .product h3 {
+            margin-top: 0;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>KITPVP.LT</h1>
-        <div class="login" id="loginButton">
-            <button onclick="openLoginModal()">Prisijungti</button>
-        </div>
-        <div id="usernameDisplay" class="username"></div>
-    </header>
+    <div class="header">
+        <h1>Markeriai Parduotuvė</h1>
+    </div>
+    <div class="nav">
+        <a href="#home">Pradžia</a>
+        <a href="#products">Produktai</a>
+        <a href="#contact">Kontaktai</a>
+    </div>
     <div class="container">
-        <div class="product">
-            <h2>VIP PASLAUGA</h2>
-            <p>Tapkite VIP nariu ir mėgaukitės išskirtiniais privalumais.</p>
-            <p class="price">$2.99</p>
-                <button onclick="openModal('VIP')">Buy Now</button>
-        </div>
-        <div class="product">
-            <h2>HERO PASLAUGA</h2>
-            <p>Įsigykite HERO, tapti išskirtiniu lyderiu.</p>
-            <p class="price">$5.99</p>
-            <button onclick="openModal('HERO')">Buy Now</button>
-        </div>
-        <div class="product">
-            <h2>GOLD PASLAUGA</h2>
-            <p>Užsitikrinkite aukščiausią pasiekimą su GOLD, ir privilegijas.</p>
-            <p class="price">$9.99</p>
-            <button onclick="openModal('GOLD')">Buy Now</button>
-        </div>
+        <section id="home">
+            <h2>Apie Mus</h2>
+            <p>Mes parduodame aukščiausios kokybės markerius už geriausią kainą.</p>
+        </section>
+        <section id="products">
+            <h2>Mūsų Produktai</h2>
+            <div class="product">
+                <img src="marker1.jpg" alt="Markeris 1">
+                <h3>Raudonas Markeris</h3>
+                <p>Kaina: 1.50€</p>
+            </div>
+            <div class="product">
+                <img src="marker2.jpg" alt="Markeris 2">
+                <h3>Mėlynas Markeris</h3>
+                <p>Kaina: 1.50€</p>
+            </div>
+            <div class="product">
+                <img src="marker3.jpg" alt="Markeris 3">
+                <h3>Žalias Markeris</h3>
+                <p>Kaina: 1.50€</p>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Kontaktai</h2>
+            <p>El. paštas: info@markeriuparduotuve.lt</p>
+            <p>Telefonas: +370 600 00000</p>
+        </section>
     </div>
-
-
-
-    <!-- The Modal -->
-    <div id="paymentModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>KITPVP.LT Paslaugos</h2>
-            <p id="selectedService"></p>
-            <form onsubmit="submitPurchase(event)">
-                <label for="username">Slaptazodis:</label>
-                <input type="text" id="username" name="username" required><br><br>
-                <label for="email">Pastas:</label>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="payment">Apmokejimo methodas:</label>
-                <select id="payment" name="payment">
-                    <option value="creditcard">Kreditine kortele</option>
-                    <option value="paypal">PayPal</option>
-                </select><br><br>
-                <button type="submit" class="btn">PATEIKTI</button>
-            </form>
-        </div>
+    <div class="footer">
+        <p>&copy; 2024 Markeriai Parduotuvė. Visos teisės saugomos.</p>
     </div>
-
-    <!-- Login Modal -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Prisijungti</h2>
-            <form onsubmit="login(event)">
-                <label for="loginUsername">Slapyvardis:</label>
-                <input type="text" id="loginUsername" name="loginUsername" required><br><br>
-                <label for="loginPassword">Slaptazodis:</label>
-                <input type="password" id="loginPassword" name="loginPassword" required><br><br>
-                <button type="submit" class="btn">Prisijungti</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        function submitPurchase(event) {
-            event.preventDefault();
-            var username = document.getElementById("username").value;
-            var email = document.getElementById("email").value;
-            var paymentMethod = document.getElementById("payment").value;
-            var selectedService = document.getElementById("selectedService").innerText;
-
-            var message = "New purchase:\n" +
-                "Username: " + username + "\n" +
-                "Email: " + email + "\n" +
-                "Payment Method: " + paymentMethod + "\n" +
-                "Service: " + selectedService;
-
-            sendToDiscord(message);
-            alert('Thank you for your purchase!');
-            closeModal();
-        }
-
-        function sendToDiscord(message) {
-            var webhookUrl = "https://discord.com/api/webhooks/1239577363608637523/-rpYxRA4d1y6EF9pb10PmayEtVDGmkzGtw41YN_NRVoK8FyPIVcQL-OacYMzg_kCpID_";
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", webhookUrl);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            var payload = { content: message };
-            xhr.send(JSON.stringify(payload));
-        }
-
-        function openModal(service) {
-            document.getElementById("selectedService").innerText = "Perki paslauga: " + service;
-            document.getElementById("paymentModal").style.display = "block";
-        }
-
-        function closeModal() {
-            document.getElementById("paymentModal").style.display = "none";
-            document.getElementById("loginModal").style.display = "none";
-        }
-
-        window.onclick = function (event) {
-            if (event.target == document.getElementById("paymentModal") || event.target == document.getElementById("loginModal")) {
-                closeModal();
-            }
-        }
-
-        function openLoginModal() {
-            document.getElementById("loginModal").style.display = "block";
-        }
-
-        function login(event) {
-            event.preventDefault();
-            var username = document.getElementById("loginUsername").value;
-            document.getElementById("usernameDisplay").innerText = "Prisijunges: " + username;
-            document.getElementById("loginButton").style.display = "none";
-            closeModal();
-        }
-
-        var closeButtons = document.getElementsByClassName("close");
-        for (var i = 0; i < closeButtons.length; i++) {
-            closeButtons[i].onclick = function () {
-                closeModal();
-            }
-        }
-    </script>
 </body>
 </html>
