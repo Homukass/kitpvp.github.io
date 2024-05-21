@@ -35,12 +35,20 @@
         .container {
             padding: 20px;
         }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
         .product {
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 5px;
             padding: 15px;
-            margin-bottom: 20px;
+            width: calc(25% - 20px);
+            box-sizing: border-box;
+            text-align: center;
         }
         .product img {
             max-width: 100%;
@@ -50,6 +58,27 @@
         }
         .product h3 {
             margin-top: 0;
+            font-size: 1.2em;
+        }
+        .product p {
+            margin: 0;
+            color: #888;
+        }
+        .product .price {
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .product button {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .product button:hover {
+            background-color: #c0392b;
         }
         .footer {
             background-color: #333;
@@ -72,32 +101,34 @@
         <a href="#contact">Kontaktai</a>
     </div>
     <div class="container">
-        <section id="home">
-            <h2>Apie Mus</h2>
-            <p>Mes parduodame aukščiausios kokybės markerius už geriausią kainą.</p>
-        </section>
         <section id="products">
             <h2>Mūsų Produktai</h2>
-            <div class="product">
-                <img src="marker1.jpg" alt="Markeris 1">
-                <h3>Raudonas Markeris</h3>
-                <p>Kaina: 1.50€</p>
+            <div class="products">
+                <div class="product">
+                    <img src="https://www.molotow.com/markers/blackliner-brush" alt="Molotow Blackliner Brush">
+                    <h3>Molotow Blackliner Brush</h3>
+                    <p class="price">5.40 €</p>
+                    <button>Į krepšelį</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.markingpendepot.com/b-paintstik-bulk" alt="B Paintstik Vaškinė Kreidelė">
+                    <h3>B Paintstik Vaškinė Kreidelė</h3>
+                    <p class="price">2.80 €</p>
+                    <button>Pasirinkti savybes</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.molotow.com/markers/blackliner-refill" alt="Blackliner Brush + Refill">
+                    <h3>Blackliner Brush + Refill</h3>
+                    <p class="price">12.10 €</p>
+                    <button>Į krepšelį</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.dopecans.com/markers/dope-beast-empty-marker" alt="Dope Beast Tuščias Markeris">
+                    <h3>Dope Beast Tuščias Markeris</h3>
+                    <p class="price">3.50 €</p>
+                    <button>Į krepšelį</button>
+                </div>
             </div>
-            <div class="product">
-                <img src="marker2.jpg" alt="Markeris 2">
-                <h3>Mėlynas Markeris</h3>
-                <p>Kaina: 1.50€</p>
-            </div>
-            <div class="product">
-                <img src="marker3.jpg" alt="Markeris 3">
-                <h3>Žalias Markeris</h3>
-                <p>Kaina: 1.50€</p>
-            </div>
-        </section>
-        <section id="contact">
-            <h2>Kontaktai</h2>
-            <p>El. paštas: info@markeriuparduotuve.lt</p>
-            <p>Telefonas: +370 600 00000</p>
         </section>
     </div>
     <div class="footer">
