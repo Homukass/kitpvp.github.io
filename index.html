@@ -1,147 +1,216 @@
 <!DOCTYPE html>
-<html lang="lt">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MegaRP.LT Projektas</title>
-    <style>
-        /* General styles */
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            background-color: #f2f2f2;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONEX</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f5f5f5;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    .header {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px 0;
+    }
 
-        h1, h2, h3 {
-            color: #ffffff;
-        }
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        p {
-            color: #f8f8f8;
-            line-height: 1.6;
-        }
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: #007bff;
+    }
 
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
+    .search-bar {
+      display: flex;
+      align-items: center;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    .search-input {
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px 0 0 5px;
+    }
 
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-        }
+    .search-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
 
-        .button:hover {
-            background-color: #0069d9;
-        }
+    .nav {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
 
-        /* Header styles */
-        header {
-            background-color: #fff;
-            padding: 20px 0;
-            box-shadow: 0 2px 4px rgba(255, 254, 254, 0.1);
-        }
+    .nav-list {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
 
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .nav-item {
+      display: inline-block;
+      margin: 0 10px;
+    }
 
-        header h1 {
-            margin: 0;
-        }
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+    }
 
-        header nav a {
-            margin-left: 20px;
-        }
+    .content {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+    }
 
-        /* Hero styles */
-        .hero {
-            background-color: #aaaaaa;
-            padding: 100px 0;
-            position: relative;
-        }
+    .page-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
 
-        .hero-content {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
 
-        .hero img {
-            width: 100%;
-            height: auto;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-        }
+    .product {
+      width: 32%;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+    }
 
-        /* About styles */
-        .about {
-            padding: 80px 0;
-        }
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
 
-        /* Features styles */
-        .features {
-            padding: 80px 0;
-        }
+    .product-details {
+      padding: 10px;
+    }
 
-        .features .container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
+    .product-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
 
-        .feature {
-            width: 30%;
-            margin-bottom: 30px;
-        }
+    .product-price {
+      font-size: 16px;
+      color: #007bff;
+    }
 
-        /* Footer styles */
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-    </style>
+    .cart {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .cart-count {
+      font-size: 16px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1><img src="logo.png" alt="Logo"></h1>
-            <nav>
-            </nav>
-        </div>
-    </header>
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        MEGARP.LT
+      </div>
+      <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Paieška...">
+        <button class="search-button">Ieškoti</button>
+      </div>
+    </div>
+  </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Projektas MegaRP.LT</h2>
-                <a href="https://discord.gg/9PSnAdTb" class="button" target="_blank">Sekite serverio kūrimo procesą DISCORD</a>
-            </div>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="#" class="nav-link">Pagrindinis</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Nevienetiniai importai</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Vienetiniai importai</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Motociklai</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Verslų įsigijimas</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Nuolaidos</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Kita</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <h1 class="page-title">BMW</h1>
+
+    <div class="products">
+      <div class="product">
+        <img src="https://onex.lt/wp-content/uploads/2024/06/01-7.png" alt="BMW M5 E34" class="product-image">
+        <div class="product-details">
+          <h3 class="product-title">BMW M5 E34</h3>
+          <p class="product-price">15.00€</p>
         </div>
-    </section>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Projektas Roplay</p>
+      </div>
+      <div class="product">
+        <img src="https://onex.lt/wp-content/uploads/2024/06/01.png" alt="BMW M4 Wide" class="product-image">
+        <div class="product-details">
+          <h3 class="product-title">BMW M4 Wide</h3>
+          <p class="product-price">12.00€</p>
         </div>
-    </footer>
+      </div>
+      <div class="product">
+        <img src="https://onex.lt/wp-content/uploads/2024/05/01.png" alt="BMW M5 CS Custom" class="product-image">
+        <div class="product-details">
+          <h3 class="product-title">BMW M5 CS Custom</h3>
+          <p class="product-price">18.00€</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart">
+    <img src="https://via.placeholder.com/30x30.png" alt="Cart Icon">
+    <span class="cart-count">0</span>
+  </div>
 </body>
 </html>
